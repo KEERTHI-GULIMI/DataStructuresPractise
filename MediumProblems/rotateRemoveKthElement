@@ -1,0 +1,23 @@
+Question -> To the given array rotate right clockwise once and remove kth element from last and repeat till one element is left.
+Approch: Underdtand the pattern between elements of the array.
+
+
+class Solution{
+static int rotateRemoveKthElement(ArrayList<Integer>arr)
+{
+   int n=arr.size();
+   int x=n/2;
+   Boolean f=true;
+
+   while(x>0){
+   if(f==true){
+    f=false;
+    n=n-1;
+   }else{
+   f=true;
+   n=n-2;
+   }
+   x--;
+ }
+  return arr.get(n);
+}
