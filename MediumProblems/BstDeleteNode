@@ -1,0 +1,46 @@
+Question->Delete Node of a BST
+
+generally we have three cases
+1) leaf node->can be directly deleted
+2) node with one child
+3) node with two children-> here we need to find smallest child from right sub tree or largest from left sub tree
+I think its better to go with right small node because it is time efficient.
+
+
+
+
+class Solution {
+    public TreeNode deleteNode(TreeNode root, int key) {
+
+        if(root==null){
+            return null;
+        }
+
+        if(root.val>key){
+            root.left= deleteNode(root.left,key);
+        }else if(root.val<key){
+            root.right= deleteNode(root.right,key);
+        }else {
+            if(root.left==null && root.right==null){
+                return null;
+            }else if(root.left==null || root.right==null){
+                return root.left==null?root.right:root.left;
+            }else{
+                TreeNode x=pre(root.right);
+                root.val=x.val;
+                root.right=deleteNode(root.right,x.val);
+            }
+        }
+
+        return root;
+        
+    }
+
+        TreeNode pre(TreeNode root){
+            while(root.left!=null){
+                root=root.left;
+            }
+
+            return root;
+        }
+}
