@@ -1,0 +1,18 @@
+Question: lowest common Ancestor is intersection node of two given nodes towards root node.
+Approach-> both p or q stay in one side of node either left or right else it will be the Anscestor(parent)
+
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+        while(root!=null){
+            if(root.val<p.val && root.val<q.val){
+                root=root.right;
+            }else if(root.val>p.val && root.val>q.val){
+                root=root.left;
+            }else{
+                return root;
+            }
+        }
+        return root;
+    }
+}
