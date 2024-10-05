@@ -1,0 +1,21 @@
+Question -> In the given BST ,we need search for two elements such that the sum of those elements should be equal to given K
+Approach-> subtract everynode data from k and check for other part in HashSet
+if found return true
+
+class Solution {
+
+    HashSet<Integer>ans=new HashSet<>();
+    public boolean findTarget(TreeNode root, int k) {
+
+        if(root==null){
+            return false;
+        }
+        if(ans.contains(k-root.val)){
+            return true;
+        }
+
+        ans.add(root.val);
+        return findTarget(root.left,k)|| findTarget(root.right,k);
+        
+    }
+}
