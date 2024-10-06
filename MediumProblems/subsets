@@ -1,0 +1,21 @@
+Question : is to find all the subsets of a given array..
+Approches :1: Here we need to return the subsets of an array
+2. This can be achieved by take or not take of an element
+3. For every element we have two choices, either we take it or not take
+4. So that we can generate all the subsets
+5. Store all the subsets and return the answer
+2)power set way 
+1. let's take an example array, [1, 2, 3]
+    - size of array, 3 so lets take three size binary number
+    - 0 0 0 => [] no elements in the array
+    - 0 0 1 => [3] 
+    - 0 1 0 => [2]
+    - 0 1 1 => [2, 3]
+    - 1 0 0 => [1]
+    - 1 0 1 => [1, 3]
+    - 1 1 0 => [1, 2]
+    - 1 1 1 => [1, 2, 3]
+
+2. As we see above we have generated all the subsets with the help of power set.
+3. The every set bit in a number will represent to consider that element.
+
