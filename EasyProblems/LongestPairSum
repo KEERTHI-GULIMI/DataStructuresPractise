@@ -1,0 +1,14 @@
+Question: to find the longest pair sum of an array
+Approach-> find sort and sum last two elements of given array
+
+class Solution {
+    public static int pairsum(int[] arr) {
+       
+       if(arr.length==1){
+           return arr[0];
+       }
+       Arrays.sort(arr);
+       int sum=(arr[arr.length-1])+(arr[arr.length-2]);
+       return sum;
+    }
+}
