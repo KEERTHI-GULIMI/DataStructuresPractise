@@ -7,8 +7,6 @@ generally we have three cases
 I think its better to go with right small node because it is time efficient.
 
 
-
-
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
 
@@ -36,11 +34,10 @@ class Solution {
         
     }
 
-        TreeNode pre(TreeNode root){
-            while(root.left!=null){
-                root=root.left;
-            }
-
-            return root;
-        }
+     TreeNode pre(TreeNode root){
+       while(root.left!=null){
+             root=root.left;
+     }
+        return root;
+     }
 }
