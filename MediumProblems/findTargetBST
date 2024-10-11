@@ -2,6 +2,7 @@ Question -> In the given BST ,we need search for two elements such that the sum 
 Approach-> subtract everynode data from k and check for other part in HashSet
 if found return true
 
+
 class Solution {
 
     HashSet<Integer>ans=new HashSet<>();
